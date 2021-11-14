@@ -1,0 +1,31 @@
+@keyframes reveal {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+%reveal {
+    opacity: 0;
+    animation: reveal ease forwards 250ms;
+}
+
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+%fade-in-up {
+    opacity: 0;
+    animation: fade-in-up ease forwards 250ms;
+}

@@ -1,0 +1,21 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    -webkit-overflow-scrolling: touch;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /*@include custom_scrollbar(var(--theme-colorPrimary), var(--theme-colorSecondary), 5px);*/
+}
+
+body,
+button,
+textarea {
+    font-family: $primary-font;
+}

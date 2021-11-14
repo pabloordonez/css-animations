@@ -1,0 +1,16 @@
+@mixin custom_scrollbar($trackColor: #eee, $thumbColor: #ccc, $size: 8px) {
+    -webkit-overflow-scrolling: touch;
+
+    &::-webkit-scrollbar {
+        width: $size;
+        height: $size;
+
+        &-track {
+            background-color: $trackColor;
+        }
+
+        &-thumb {
+            background-color: $thumbColor;
+        }
+    }
+}

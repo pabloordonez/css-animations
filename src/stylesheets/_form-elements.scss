@@ -1,0 +1,80 @@
+//
+// Placeholders
+// ------------------
+%base-input {
+    display: block;
+    width: 100%;
+    border: none;
+    outline: none;
+    letter-spacing: 0.5px;
+    padding: 10px;
+    transition: border-color ease 250ms;
+
+    &:focus {
+        border-color: #555;
+    }
+}
+
+%btn-reset {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+//
+// Mixins
+// ------------------
+@mixin base-cta($primaryColor, $secondaryColor, $withSpan: true) {
+    display: inline-block;
+    padding: 8px 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $primaryColor;
+    border: 3px solid $primaryColor;
+    transition: background-color ease 250ms;
+    cursor: pointer;
+
+    @if ($withSpan != true) {
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        transition: color ease 250ms;
+    }
+
+    &:hover {
+        background-color: $primaryColor;
+        color: $secondaryColor;
+
+        @if ($withSpan) {
+            span {
+                color: $secondaryColor;
+            }
+        }
+    }
+
+    @if ($withSpan) {
+        span {
+            display: block;
+            line-height: 1;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: color ease 250ms;
+        }
+    }
+}
+
+//
+// Shared styles
+// ------------------
+$form-error-color: #f18282;
+
+form {
+    :global(.inputHasErrors) {
+        border-color: $form-error-color !important;
+        background-color: rgba($form-error-color, 0.05) !important;
+    }
+
+    :global(.errorMessage) {
+        color: $form-error-color;
+        font-size: 11px;
+    }
+}
